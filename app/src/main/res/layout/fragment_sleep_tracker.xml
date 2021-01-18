@@ -77,9 +77,12 @@
             app:layout_constraintBaseline_toBaselineOf="@id/stop_button"
             app:layout_constraintEnd_toStartOf="@+id/stop_button"
             app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:enabled="@{sleepTrackerViewModel.startButtonVisible}"
+            />
 
         <Button
+            android:enabled="@{sleepTrackerViewModel.stopButtonVisible}"
             android:id="@+id/stop_button"
             style="@style/SleepButtons"
             android:layout_width="wrap_content"
@@ -93,6 +96,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:enabled="@{sleepTrackerViewModel.clearButtonVisible}"
             android:id="@+id/clear_button"
             style="@style/SleepButtons"
             android:layout_width="wrap_content"
