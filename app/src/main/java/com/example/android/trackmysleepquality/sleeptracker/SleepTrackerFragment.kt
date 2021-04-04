@@ -62,7 +62,7 @@ class SleepTrackerFragment : Fragment() {
                 sleepTrackerViewModel.doneNavigating()
             }
         })
-        sleepTrackerViewModel.showSnackbarEvent.observe(this, Observer {
+        sleepTrackerViewModel.showSnackBarEvent.observe(this, Observer {
             if (it == true) {
                 Snackbar.make(
                         activity!!.findViewById(android.R.id.content),
