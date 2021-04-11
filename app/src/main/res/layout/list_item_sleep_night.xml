@@ -8,11 +8,16 @@
         <variable
             name="sleep"
             type="com.example.android.trackmysleepquality.database.SleepNight" />
+
+        <variable
+            name="clickListener"
+            type="com.example.android.trackmysleepquality.sleeptracker.SleepNightListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{()->clickListener.onClick(sleep)}">
 
         <ImageView
             android:id="@+id/quality_image"
@@ -24,8 +29,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/ic_sleep_5"
-            app:sleepImage="@{sleep}"/>
+            app:sleepImage="@{sleep}"
+            tools:srcCompat="@drawable/ic_sleep_5" />
 
         <TextView
             android:id="@+id/sleep_length"
@@ -37,8 +42,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/quality_image"
             app:layout_constraintTop_toTopOf="@id/quality_image"
-            tools:text="Wednesday"
-            app:sleepDurationFormatted="@{sleep}"/>
+            app:sleepDurationFormatted="@{sleep}"
+            tools:text="Wednesday" />
 
         <TextView
             android:id="@+id/quality_string"
@@ -48,7 +53,7 @@
             app:layout_constraintEnd_toEndOf="@id/sleep_length"
             app:layout_constraintStart_toStartOf="@id/sleep_length"
             app:layout_constraintTop_toBottomOf="@id/sleep_length"
-            tools:text="Excelent!!"
-            app:sleepQualityString="@{sleep}"/>
+            app:sleepQualityString="@{sleep}"
+            tools:text="Excelent!!" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
